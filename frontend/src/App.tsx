@@ -1,8 +1,14 @@
 import { ThemeProvider } from "styled-components";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { GlobalStyles } from "./components/styles/Global";
+import ProfileScreen from "./components/ProfileScreen";
 
 export const theme = {
   colors: {
-    header: "#0d1321",
+    background: "#181818",
+    color: "#9b9b9b",
+    nav: "#000",
+    logoColor: "#075b25"
   
   },
 };
@@ -10,7 +16,13 @@ export const theme = {
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <h1>Hello World!</h1>
+      <GlobalStyles />
+      <Router>
+        <Switch>
+<    Route path="/" component={ProfileScreen} />
+        </Switch>
+      </Router>
+      
     </ThemeProvider>
   );
 }
