@@ -5,7 +5,7 @@ export const NavStyled = styled.nav`
       theme?.colors?.nav ? theme?.colors?.nav : "#000"};
       height: 100vh;
       padding-right: 10px;
-      width: 10%;
+      width: 7%;
       min-height: 100vh;
     position: fixed;
     top: 0px;
@@ -48,6 +48,8 @@ export const NavStyled = styled.nav`
       theme?.colors?.logoColor ? theme?.colors?.logoColor : "#075b25"} ;
   }
 
+
+
   & ul li a span{
       display: block;
       text-align: center;
@@ -66,7 +68,7 @@ export const NavStyled = styled.nav`
  
 
   & h6 {
-    padding: 22px;
+    padding: 12px;
     margin: 0;
     
   }
