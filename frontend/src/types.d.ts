@@ -1,19 +1,30 @@
-type UserLoginAction = {
-  loading?: boolean;
-  success?: boolean;
-  type: userLoginType;
-  payload?: {};
-  error?: Error | null;
-};
+interface User {
+  country: string;
+  display_name: string;
+  email: string;
+  external_urls?: {
+    spotify: string;
+  };
+  followers: { total: string };
+  images: [
+    {
+      url: string;
+    }
+  ];
+  product?: string;
+  type?: string;
+}
 
-type userLoginType =
-  | typeof USER_LOGIN_FAIL
-  | typeof USER_LOGIN_REQUEST
-  | typeof USER_LOGIN_SUCCESS;
+interface FollowedArtist {
+  artists: {
+    items: [];
+  };
+}
 
-type DispatchType = (args: UserLoginAction) => UserLoginAction;
+interface Playlists {
+  total: number;
+}
 
-interface stateType {
-  loading?: boolean;
-  success?: boolean;
+interface Recent {
+  items: [];
 }

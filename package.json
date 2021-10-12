@@ -1,6 +1,5 @@
 {
   "name": "spotify-web-app",
-  "proxy": "http://127.0.0.1:5000",
   "version": "1.0.0",
   "description": "A web app built on the spotify web api to show user stats",
   "main": "app.ts",

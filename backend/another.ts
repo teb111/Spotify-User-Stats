@@ -12,7 +12,7 @@ import morgan from "morgan";
 dotenv.config({});
 
 const redirect_uri =
-  process.env.REDIRECT_URI || "http://localhost:8888/callback";
+  process.env.REDIRECT_URI || "http://localhost:5000/callback";
 const frontend_uri = process.env.FRONTEND_URI || "http://localhost:3000";
 /**
  * Generates a random string containing numbers and letters
@@ -102,7 +102,7 @@ app.get("/callback", cors(), (req: Request, res: Response) => {
 
           // use the access token to access the Spotify Web API
           request.get(options, function (error, response, body) {
-            console.log("Body is here");
+            console.log(body);
           });
 
           // we can also pass the token to the browser to make requests from there
@@ -153,6 +153,6 @@ app.get("/refresh_token", cors(), (req: Request, res: Response) => {
 //   res.send("This app is working");
 // });
 
-const PORT = process.env.PORT || 8888;
+const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => console.log(`App running on port ${PORT}`));
+app.listen(PORT, () => console.log(`App running on port 5000`));

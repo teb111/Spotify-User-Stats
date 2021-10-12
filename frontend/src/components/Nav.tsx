@@ -11,9 +11,9 @@ export default function Nav() {
 <defs>
 
 <linearGradient gradientUnits="userSpaceOnUse" id="linear-gradient" x1="-5.549" x2="504.658" y1="517.549" y2="7.342">
-<stop offset="0" stop-color="#048a33"/><stop offset="1" stop-color="#00dc4d"/></linearGradient>
+<stop offset="0" stopColor="#048a33"/><stop offset="1" stopColor="#00dc4d"/></linearGradient>
 <linearGradient gradientUnits="userSpaceOnUse" id="linear-gradient-2" x1="192.736" x2="366.552" y1="376.124" y2="202.307">
-<stop offset="0" stop-color="#111"/><stop offset="1" stop-color="#323232"/></linearGradient>
+<stop offset="0" stopColor="#111"/><stop offset="1" stopColor="#323232"/></linearGradient>
 <linearGradient id="linear-gradient-3" x1="166.943" x2="340.759" y1="350.331" y2="176.514"/>
 <linearGradient id="linear-gradient-4" x1="137.652" x2="311.469"  y1="321.04" y2="147.224"/>
 </defs><title/><path className="cls-1" d="M256,0C114.615,0,0,114.615,0,256S114.615,512,256,512,512,397.385,512,256,397.385,0,256,0Z"/>
