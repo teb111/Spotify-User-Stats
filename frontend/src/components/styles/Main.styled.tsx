@@ -4,9 +4,9 @@ export const MainStyled = styled.div``;
 export const UserDetails = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5px;
-  width: fit-content;
-  padding: 10px 14px 10px 120px;
+  gap: 20px;
+  width: 90%;
+  padding: 10px 14px 10px 80px;
 
   @media (max-width: 800px) {
     padding-left: 32px;
@@ -32,7 +32,7 @@ export const Name = styled.a`
 `;
 
 export const List = styled.ul`
-  margin-top: 1px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +85,7 @@ export const UserInfo = styled.div`
 `;
 
 export const SignOut = styled.button`
-  margin-top: 3px;
+  margin-top: 20px;
   display: block;
   padding: 1rem 0.2rem;
   font-size: 1.5rem;
@@ -138,13 +138,26 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
+  /* width: 92%; */
+  padding-left: 100px;
 
   & h3 {
     display: block;
     text-align: start;
     text-transform: uppercase;
     letter-spacing: 1.8px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 400;
+  }
+
+  @media (max-width: 800px) {
+    padding-left: 5%;
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 `;

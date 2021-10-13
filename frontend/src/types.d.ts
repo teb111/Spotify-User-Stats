@@ -27,4 +27,7 @@ interface Playlists {
 
 interface Recent {
   items: [];
+  track: {};
 }
+
+type RecentlyOrArtists = Array<any> | Recent | null;

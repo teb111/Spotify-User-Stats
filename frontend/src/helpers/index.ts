@@ -18,3 +18,10 @@ export const catchErrors = (fn: any) =>
       console.error(err);
     });
   };
+
+// Format milliseconds into MM:SS
+export const formatSongDuration = (milliseconds: any) => {
+  const minutes = Math.floor(milliseconds / 60000);
+  const seconds: number = Number(((milliseconds % 60000) / 1000).toFixed(0));
+  return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+};

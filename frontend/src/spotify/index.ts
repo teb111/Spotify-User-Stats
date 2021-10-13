@@ -110,14 +110,31 @@ export const getRecentlyPlayed = () =>
     headers,
   });
 
+/**
+ * Get a User's Top Artists
+ * https://developer.spotify.com/documentation/web-api/reference/personalization/get-users-top-artists-and-tracks/
+ */
+export const getTopArtists = () =>
+  axios.get("https://api.spotify.com/v1/me/top/artists?limit=10", { headers });
+
+// All Data
 export const getUserInfo = () =>
   axios
-    .all([getUser(), getFollowing(), getPlaylists(), getRecentlyPlayed()])
+    .all([
+      getUser(),
+      getFollowing(),
+      getPlaylists(),
+      getRecentlyPlayed(),
+      getTopArtists(),
+    ])
     .then(
-      axios.spread((user, followedArtists, playlists, recentlyPlayed) => ({
-        user: user.data,
-        followedArtists: followedArtists.data,
-        playlists: playlists.data,
-        recentlyPlayed: recentlyPlayed.data,
-      }))
+      axios.spread(
+        (user, followedArtists, playlists, recentlyPlayed, topArtists) => ({
+          user: user.data,
+          followedArtists: followedArtists.data,
+          playlists: playlists.data,
+          recentlyPlayed: recentlyPlayed.data,
+          topArtists: topArtists.data,
+        })
+      )
     );

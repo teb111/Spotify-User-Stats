@@ -15,27 +15,37 @@ import { FaSignOutAlt } from "react-icons/fa";
 import { logout } from "../spotify";
 import Loader from "./Loader";
 
+import RecentlyPlayed from "./RecentlyPlayed";
+import Artist from "./Artist";
+
 export default function Main() {
   const [user, setUser] = useState<User | null>(null);
   const [followedArtists, setFollowedArtists] = useState<FollowedArtist | null>(
     null
   );
   const [playlists, setPlaylists] = useState<Playlists | null>(null);
-  const [recentlyPlayed, setRecentlyPlayed] = useState<Recent | null>(null);
+  const [recentlyPlayed, setRecentlyPlayed] = useState<RecentlyOrArtists>([]);
+  const [topArtists, setTopArtists] = useState<RecentlyOrArtists>([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const { user, followedArtists, playlists, recentlyPlayed } =
+      const { user, followedArtists, playlists, recentlyPlayed, topArtists } =
         await getUserInfo();
       setUser(user);
       setFollowedArtists(followedArtists);
       setPlaylists(playlists);
-      setRecentlyPlayed(recentlyPlayed);
+      setRecentlyPlayed(recentlyPlayed.items.splice(0, 10));
+      setTopArtists(topArtists.items);
       console.log({
         user: user,
         artist: followedArtists,
         playlists,
-        recentlyPlayed: recentlyPlayed?.items,
+        recentlyPlayed: recentlyPlayed?.items.map((track: any) => {
+          return track?.track;
+        }),
+        topArtists: topArtists?.items.map((artist: any) => {
+          return artist;
+        }),
       });
     };
     catchErrors(fetchData());
@@ -89,8 +99,8 @@ export default function Main() {
           </MainStyled>
 
           <Content>
-            <h3>Recently Played</h3>
-            <h3>Recently Played</h3>
+            <RecentlyPlayed recentlyPlayed={recentlyPlayed} />
+            <Artist topArtists={topArtists} />
           </Content>
         </>
       )}

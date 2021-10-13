@@ -1,15 +1,15 @@
 import { createGlobalStyle } from "styled-components";
 
 interface Theme {
-  colors:{
-    background: string,
-    color: string,
-    nav: string,
-    logoColor: string
-  }
+  colors: {
+    background: string;
+    color: string;
+    nav: string;
+    logoColor: string;
+  };
 }
 
-export const GlobalStyles = createGlobalStyle<{theme: Theme}>`
+export const GlobalStyles = createGlobalStyle<{ theme: Theme }>`
   *::before,
 *::after {
   margin: 0;
@@ -32,5 +32,10 @@ body {
   transition: .9s linear;
   color: ${({ theme }) =>
     theme?.colors?.color ? theme?.colors?.color : "#000"};
+}
+
+h1, h2, h3, h4, h5 ,h6, p, span, div {
+  margin: 0;
+  padding: 0;
 }
 `;

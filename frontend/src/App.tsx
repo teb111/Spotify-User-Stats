@@ -9,7 +9,7 @@ export const theme = {
   colors: {
     background: "#181818",
     color: "#9b9b9b",
-    nav: "#000",
+    nav: "#000000ed",
     logoColor: "#075b25",
   },
 };
