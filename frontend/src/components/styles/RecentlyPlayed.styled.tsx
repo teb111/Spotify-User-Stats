@@ -19,6 +19,8 @@ export const Recent = styled.div`
   }
   & h3 {
     margin-top: 4px;
+    color: ${({ theme }) =>
+      theme?.colors?.color ? theme?.colors?.color : "#ffffffeb"};
   }
   & ul {
     display: flex;
@@ -59,6 +61,7 @@ export const Recent = styled.div`
     letter-spacing: 1.6px;
     color: #ffffff;
     text-decoration: none;
+    width: fit-content;
   }
 
   & ul li a:hover {

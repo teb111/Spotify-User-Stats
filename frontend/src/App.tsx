@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { token } from "./spotify";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/styles/Global";
 import ProfileScreen from "./screens/ProfileScreen";
 import LoginScreen from "./screens/LoginScreen";
+import TopArtistsScreen from "./screens/TopArtistsScreen";
 
 export const theme = {
   colors: {
@@ -25,7 +27,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      {accessToken !== null || "" ? <ProfileScreen /> : <LoginScreen />}
+      <Router>
+        <Switch>
+          {(!accessToken || accessToken === null || "") && <LoginScreen />}
+          <Route path="/" component={ProfileScreen} exact />
+          <Route path="/topartists" component={TopArtistsScreen} exact />
+        </Switch>
+      </Router>
     </ThemeProvider>
   );
 }

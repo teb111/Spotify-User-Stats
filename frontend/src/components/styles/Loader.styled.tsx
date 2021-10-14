@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const AppLoader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 250px;
   width: 46px;
   height: 80px;

@@ -1,6 +1,7 @@
 import { IMG } from "./styles/Artist.styled";
 import { SignOut } from "./styles/Main.styled";
 import { Recent } from "./styles/RecentlyPlayed.styled";
+import { Link } from "react-router-dom";
 
 export default function Artist({
   topArtists,
@@ -9,9 +10,11 @@ export default function Artist({
 }) {
   return (
     <Recent>
-      <div>
-        <h3>Favourite Artists</h3> <SignOut>Show More &nbsp;</SignOut>
-      </div>
+      <Link to="/topartists">
+        <div>
+          <h3>Favourite Artists</h3> <SignOut>Show More &nbsp;</SignOut>
+        </div>
+      </Link>
       <ul>
         {topArtists instanceof Array &&
           topArtists?.length > 0 &&

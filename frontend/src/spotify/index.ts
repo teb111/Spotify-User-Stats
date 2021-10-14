@@ -114,8 +114,25 @@ export const getRecentlyPlayed = () =>
  * Get a User's Top Artists
  * https://developer.spotify.com/documentation/web-api/reference/personalization/get-users-top-artists-and-tracks/
  */
+
+// Long ----- Medium --- Short
+
+export const getTopArtistsLong = () =>
+  axios.get(
+    "https://api.spotify.com/v1/me/top/artists?limit=30&time_range=long_term",
+    { headers }
+  );
+
 export const getTopArtists = () =>
-  axios.get("https://api.spotify.com/v1/me/top/artists?limit=10", { headers });
+  axios.get("https://api.spotify.com/v1/me/top/artists?limit=30", { headers });
+
+export const getTopArtistsShort = () =>
+  axios.get(
+    "https://api.spotify.com/v1/me/top/artists?limit=30&time_range=short_term",
+    {
+      headers,
+    }
+  );
 
 // All Data
 export const getUserInfo = () =>
