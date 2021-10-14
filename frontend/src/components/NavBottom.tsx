@@ -27,7 +27,7 @@ export default function NavBottom() {
           </Link>
         </li>
         <li>
-          <Link to="/" rel="noreferrer">
+          <Link to="/toptracks" rel="noreferrer">
             <div>
               <span>
                 <FaMusic />
@@ -38,7 +38,7 @@ export default function NavBottom() {
           </Link>
         </li>
         <li>
-          <Link to="/" rel="noreferrer">
+          <Link to="/topplaylists" rel="noreferrer">
             <div>
               <span>
                 <FaPlay />

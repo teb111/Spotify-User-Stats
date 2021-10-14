@@ -6,6 +6,8 @@ import { GlobalStyles } from "./components/styles/Global";
 import ProfileScreen from "./screens/ProfileScreen";
 import LoginScreen from "./screens/LoginScreen";
 import TopArtistsScreen from "./screens/TopArtistsScreen";
+import TopTracksScreen from "./screens/TopTracksScreen";
+import TopPlaylistsScreen from "./screens/TopPlaylistsScreen";
 
 export const theme = {
   colors: {
@@ -32,6 +34,8 @@ function App() {
           {(!accessToken || accessToken === null || "") && <LoginScreen />}
           <Route path="/" component={ProfileScreen} exact />
           <Route path="/topartists" component={TopArtistsScreen} exact />
+          <Route path="/toptracks" component={TopTracksScreen} exact />
+          <Route path="/topplaylists" component={TopPlaylistsScreen} exact />
         </Switch>
       </Router>
     </ThemeProvider>

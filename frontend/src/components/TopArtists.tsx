@@ -32,7 +32,7 @@ export default function TopArtists() {
     catchErrors(fetchArtists());
   }, []);
 
-  const mediumArtist = async (name: string) => {
+  const getArtist = async (name: string) => {
     let duration: any;
     name === "long"
       ? (duration = artistDuration.long)
@@ -63,15 +63,13 @@ export default function TopArtists() {
               <h3>Top Artists</h3>
               <ul>
                 <li>
-                  <div onClick={(e) => mediumArtist("long")}>All Time</div>
+                  <div onClick={(e) => getArtist("long")}>All Time</div>
                 </li>
                 <li>
-                  <div onClick={(e) => mediumArtist("medium")}>
-                    Last 6 months
-                  </div>
+                  <div onClick={(e) => getArtist("medium")}>Last 6 months</div>
                 </li>
                 <li>
-                  <div onClick={(e) => mediumArtist("short")}>Last 4 weeks</div>
+                  <div onClick={(e) => getArtist("short")}>Last 4 weeks</div>
                 </li>
               </ul>
             </div>

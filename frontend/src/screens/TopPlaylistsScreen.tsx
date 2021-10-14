@@ -1,14 +1,14 @@
 import Nav from "../components/Nav";
 import NavBottom from "../components/NavBottom";
 import { ProfileBody } from "../components/styles/ProfileScreen.styled";
-import TopArtists from "../components/TopArtists";
+import TopPlaylists from "../components/TopPlaylists";
 
-export default function TopArtistsScreen() {
+export default function TopPlaylistsScreen() {
   return (
     <>
       <ProfileBody>
         <Nav />
-        <TopArtists />
+        <TopPlaylists />
       </ProfileBody>
       <NavBottom />
     </>
