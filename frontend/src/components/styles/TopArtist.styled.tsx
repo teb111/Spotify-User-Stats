@@ -49,11 +49,11 @@ export const TopArtist = styled.div`
   }
 
   @media (max-width: 800px) {
-    padding-left: 10px;
+    padding-left: 5px;
     width: 90%;
     & div {
       flex-direction: column;
-      padding-left: 20px;
+      padding-left: 5px;
       width: 100%;
     }
 
@@ -66,9 +66,9 @@ export const TopArtist = styled.div`
 export const ArtistContent = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 40px;
+  gap: 20px;
   width: 93%;
-  padding-left: 140px;
+  padding-left: 110px;
 
   & a {
     color: ${({ theme }) =>
@@ -102,12 +102,12 @@ export const ArtistContent = styled.div`
 
   @media (max-width: 800px) {
     width: 100%;
-    padding-left: 10px;
+    padding-left: 5px;
   }
 
   @media (max-width: 700px) {
     & div img {
-      width: 150px;
+      width: 160px;
       height: 170px;
       border-radius: 50%;
       margin-bottom: 10px;

@@ -20,7 +20,7 @@ export const catchErrors = (fn: any) =>
   };
 
 // Format milliseconds into MM:SS
-export const formatSongDuration = (milliseconds: any) => {
+export const formatSongDuration = (milliseconds: number) => {
   const minutes = Math.floor(milliseconds / 60000);
   const seconds: number = Number(((milliseconds % 60000) / 1000).toFixed(0));
   return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;

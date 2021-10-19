@@ -5,5 +5,5 @@ export const ProfileBody = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  width: 93%;
+  width: 95%;
 `;

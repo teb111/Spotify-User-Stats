@@ -5,21 +5,21 @@ export const TopTracksContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 90%;
-  padding-left: 18%;
+  width: 85%;
+  padding-left: 10%;
 
   & ul {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
   }
 
   & ul li {
     display: grid;
     grid-template-columns: auto 11fr 1fr;
-    gap: 2px;
+    gap: 5px;
     width: 100%;
     margin-top: 25px;
     list-style: none;
@@ -72,5 +72,9 @@ export const TopTracksContainer = styled.div`
   @media (max-width: 800px) {
     width: 100%;
     padding-left: 0;
+  }
+
+  & ul li a p {
+    font-size: 14px;
   }
 `;

@@ -79,7 +79,7 @@ export default function TopArtists() {
               artists.length > 0 &&
               artists?.map((artist, i) => (
                 <div key={i}>
-                  <img src={artist?.images[0]?.url} alt={artist?.name} />
+                  <img src={artist?.images[1]?.url} alt={artist?.name} />
                   <a href={artist?.uri}>{artist?.name}</a>
                 </div>
               ))}

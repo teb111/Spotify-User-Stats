@@ -9,7 +9,8 @@ export const UserDetails = styled.div`
   padding: 10px 14px 10px 80px;
 
   @media (max-width: 800px) {
-    padding-left: 32px;
+    padding-left: 10px;
+    width: 100%;
   }
 
   @media (max-width: 600px) {
@@ -66,9 +67,9 @@ export const UserImage = styled.img`
   transition: 0.7s ease-in-out;
 
   @media (max-width: 600px) {
-    width: 94%;
-    height: 400px;
-    border-radius: 50%;
+    width: 98%;
+    height: 390px;
+    border-radius: 10%;
   }
 `;
 
@@ -138,8 +139,8 @@ export const Content = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
-  /* width: 92%; */
-  padding-left: 100px;
+  width: 90%;
+  padding-left: 120px;
 
   & h3 {
     display: block;
@@ -154,7 +155,7 @@ export const Content = styled.div`
     padding-left: 5%;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     display: flex;
     justify-content: center;
     align-items: center;

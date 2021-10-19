@@ -8,6 +8,8 @@ import LoginScreen from "./screens/LoginScreen";
 import TopArtistsScreen from "./screens/TopArtistsScreen";
 import TopTracksScreen from "./screens/TopTracksScreen";
 import TopPlaylistsScreen from "./screens/TopPlaylistsScreen";
+import TrackInfoScreen from "./screens/TrackInfoScreen";
+import PlaylistScreen from "./screens/PlaylistScreen";
 
 export const theme = {
   colors: {
@@ -36,6 +38,8 @@ function App() {
           <Route path="/topartists" component={TopArtistsScreen} exact />
           <Route path="/toptracks" component={TopTracksScreen} exact />
           <Route path="/topplaylists" component={TopPlaylistsScreen} exact />
+          <Route path="/track/:id" component={TrackInfoScreen} exact />
+          <Route path="/playlist/:id" component={PlaylistScreen} exact />
         </Switch>
       </Router>
     </ThemeProvider>

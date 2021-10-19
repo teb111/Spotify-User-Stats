@@ -159,6 +159,18 @@ export const getTopTracksLong = () =>
     { headers }
   );
 
+// Get a specific track
+// https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-track
+
+export const getTrackById = (id: string) =>
+  axios.get(`https://api.spotify.com/v1/tracks/${id}`, { headers });
+
+//Get a Playlist and it's content
+// https://developer.spotify.com/documentation/web-api/reference/#category-playlists
+
+export const getPlaylistById = (id: string) =>
+  axios.get(`https://api.spotify.com/v1/playlists/${id}`, { headers });
+
 // All Data
 export const getUserInfo = () =>
   axios

@@ -3,6 +3,7 @@ import { TopArtist } from "./styles/TopArtist.styled";
 import { TopTracksContainer } from "./styles/TopTracks.styled";
 import { getTopTracksLong, getTopTracks, getTopTracksShort } from "../spotify";
 import { catchErrors } from "../helpers";
+import { Link } from "react-router-dom";
 export default function TopTracks() {
   const [tracks, setTracks] = useState<RecentlyOrArtists>([]);
   const [duration, setDuration] = useState<String>("long");
@@ -72,12 +73,24 @@ export default function TopTracks() {
               <li key={i}>
                 <img src={track?.album?.images[0]?.url} alt={track?.name} />
 
-                <a href={track?.uri}>
+                <Link to={`track/${track?.id}`}>
                   <p>{track?.name}</p>
                   <div>
-                    <span>Benny Blanco, Gracie Abram&nbsp;</span>
+                    {track?.artists &&
+                      track?.artists.map(
+                        ({ name }: { name: string }, i: any) => (
+                          <span key={i}>
+                            {name.substring(0, 12)}
+                            {track?.artists.length > 0 &&
+                            i === track?.artists.length - 1
+                              ? ""
+                              : ","}
+                            &nbsp;
+                          </span>
+                        )
+                      )}
                   </div>
-                </a>
+                </Link>
                 <span>3:52</span>
               </li>
             ))}

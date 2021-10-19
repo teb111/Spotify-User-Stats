@@ -31,3 +31,28 @@ interface Recent {
 }
 
 type RecentlyOrArtists = Array<any> | Recent | null;
+
+interface Track {
+  name: string;
+  album: {
+    name: string;
+    images: [
+      {
+        url: string;
+      }
+    ];
+  };
+  artists: [];
+  uri: string;
+  popularity: number;
+}
+
+interface PlayList {
+  tracks: {
+    items: [];
+    total: number;
+  };
+  name: string;
+  images: [{ url: string }];
+  description: string;
+}
