@@ -1,4 +1,4 @@
-#Spotify Stats
+# Spotify Stats
 
 > A Web Application consuming the SPOTIFY web api which visualizes personal data
 
