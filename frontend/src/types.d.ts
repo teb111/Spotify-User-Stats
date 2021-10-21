@@ -41,6 +41,7 @@ interface Track {
         url: string;
       }
     ];
+    release_date: string;
   };
   artists: [];
   uri: string;
@@ -55,4 +56,52 @@ interface PlayList {
   name: string;
   images: [{ url: string }];
   description: string;
+}
+
+interface Artist {
+  images: [
+    {
+      url: string;
+    }
+  ];
+  name: string;
+  popularity: string;
+  followers: {
+    total: number;
+  };
+  genres: [string, string, string];
+}
+
+type ArtistType = Artist | null;
+
+interface ArtistProps {
+  name: string;
+  id: string;
+  images: [
+    {
+      url: string;
+    }
+  ];
+  total_tracks: number;
+}
+
+interface Releases {
+  items: [];
+}
+
+interface NewReleasesProps {
+  name: string;
+  id: string;
+  images: [
+    {
+      url: string;
+    }
+  ];
+  total_tracks: number;
+  artists: [];
+  release_date: string;
+  uri: string;
+  external_urls: {
+    spotify: string;
+  };
 }

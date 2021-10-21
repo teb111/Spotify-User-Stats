@@ -5,7 +5,7 @@ export const TopTracksContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 85%;
+  width: 90%;
   padding-left: 10%;
 
   & ul {

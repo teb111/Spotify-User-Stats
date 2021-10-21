@@ -32,8 +32,8 @@ export const NavStyled = styled.nav`
   & ul li a {
     text-decoration: none;
     color: ${({ theme }) =>
-      theme?.colors?.color ? theme?.colors?.color : "#ffffffeb"};
-    transition: 0.3s linear;
+      theme?.colors?.textColor ? theme?.colors?.textColor : "#ffffffeb"};
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
   & ul li:hover {

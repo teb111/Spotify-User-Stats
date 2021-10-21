@@ -10,6 +10,9 @@ import TopTracksScreen from "./screens/TopTracksScreen";
 import TopPlaylistsScreen from "./screens/TopPlaylistsScreen";
 import TrackInfoScreen from "./screens/TrackInfoScreen";
 import PlaylistScreen from "./screens/PlaylistScreen";
+import ArtistScreen from "./screens/ArtistScreen";
+import RecentlyPlayedScreen from "./screens/RecentlyPlayedScreen";
+import NewReleasesScreen from "./screens/NewReleasesScreen";
 
 export const theme = {
   colors: {
@@ -17,6 +20,7 @@ export const theme = {
     color: "#9b9b9b",
     nav: "#000000ed",
     logoColor: "#075b25",
+    textColor: "#ffffffeb",
   },
 };
 
@@ -40,6 +44,9 @@ function App() {
           <Route path="/topplaylists" component={TopPlaylistsScreen} exact />
           <Route path="/track/:id" component={TrackInfoScreen} exact />
           <Route path="/playlist/:id" component={PlaylistScreen} exact />
+          <Route path="/artist/:id" component={ArtistScreen} exact />
+          <Route path="/recent" component={RecentlyPlayedScreen} exact />
+          <Route path="/newreleases" component={NewReleasesScreen} exact />
         </Switch>
       </Router>
     </ThemeProvider>

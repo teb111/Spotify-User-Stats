@@ -171,6 +171,21 @@ export const getTrackById = (id: string) =>
 export const getPlaylistById = (id: string) =>
   axios.get(`https://api.spotify.com/v1/playlists/${id}`, { headers });
 
+/**
+ * Get an Artist
+ * https://developer.spotify.com/documentation/web-api/reference/artists/get-artist/
+ */
+export const getArtistById = (id: string) =>
+  axios.get(`https://api.spotify.com/v1/artists/${id}`, { headers });
+
+/**
+ * Get new Releases
+ * https://developer.spotify.com/documentation/web-api/reference/#/operations/get-new-releases
+ */
+
+export const getNewReleases = () =>
+  axios.get(`https://api.spotify.com/v1/browse/new-releases`, { headers });
+
 // All Data
 export const getUserInfo = () =>
   axios

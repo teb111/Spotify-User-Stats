@@ -55,7 +55,7 @@ export const NavBottomStyled = styled.nav`
     margin: 0;
     color: ${({ theme }) =>
       theme?.colors?.color ? theme?.colors?.color : "#ffffffeb"};
-    transition: 0.6s linear;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     font-size: 12px;
     letter-spacing: 1.5px;
   }

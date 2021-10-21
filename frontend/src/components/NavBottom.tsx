@@ -1,6 +1,7 @@
 import { NavBottomStyled } from "./styles/NavBottom.styled";
 import { FaUser, FaMicrophone, FaMusic, FaPlay, FaTape } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { MdNewReleases } from "react-icons/md";
 
 export default function NavBottom() {
   return (
@@ -48,15 +49,27 @@ export default function NavBottom() {
             </div>
           </Link>
         </li>
-
+        {/* 
         <li>
-          <Link to="/" rel="noreferrer">
+          <Link to="/recent" rel="noreferrer">
             <div>
               <span>
                 <FaTape />
               </span>
 
               <span>Recent</span>
+            </div>
+          </Link>
+        </li> */}
+
+        <li>
+          <Link to="/newreleases" rel="noreferrer">
+            <div>
+              <span>
+                <MdNewReleases />
+              </span>
+
+              <span>New Releases</span>
             </div>
           </Link>
         </li>

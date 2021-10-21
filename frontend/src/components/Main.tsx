@@ -36,17 +36,6 @@ export default function Main() {
       setPlaylists(playlists);
       setRecentlyPlayed(recentlyPlayed.items.splice(0, 20));
       setTopArtists(topArtists.items.splice(0, 20));
-      // console.log({
-      //   user: user,
-      //   artist: followedArtists,
-      //   playlists,
-      //   recentlyPlayed: recentlyPlayed?.items.map((track: any) => {
-      //     return track?.track;
-      //   }),
-      //   topArtists: topArtists?.items.map((artist: any) => {
-      //     return artist;
-      //   }),
-      // });
     };
     catchErrors(fetchData());
   }, []);

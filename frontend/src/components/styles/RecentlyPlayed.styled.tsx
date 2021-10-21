@@ -7,7 +7,7 @@ export const Recent = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 30px;
+    /* margin-top: 30px; */
   }
 
   & div button {
@@ -52,16 +52,23 @@ export const Recent = styled.div`
     margin-right: 20px;
   }
 
+  & ul li div a,
   & ul li a {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
+    margin: 0;
+    padding: 0;
     font-size: 13px;
     letter-spacing: 1.6px;
     color: #ffffff;
     text-decoration: none;
     width: fit-content;
+    transition: all 0.45s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  & ul li div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   & ul li a:hover {
@@ -85,4 +92,9 @@ export const Recent = styled.div`
     text-transform: capitalize;
     font-size: 10px;
   }
+`;
+
+export const ArtistFlex = styled.div`
+  display: flex;
+  flex-direction: row !important;
 `;

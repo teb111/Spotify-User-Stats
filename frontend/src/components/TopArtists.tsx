@@ -80,7 +80,7 @@ export default function TopArtists() {
               artists?.map((artist, i) => (
                 <div key={i}>
                   <img src={artist?.images[1]?.url} alt={artist?.name} />
-                  <a href={artist?.uri}>{artist?.name}</a>
+                  <Link to={`artist/${artist?.id}`}>{artist?.name}</Link>
                 </div>
               ))}
           </ArtistContent>

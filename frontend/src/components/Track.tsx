@@ -42,6 +42,9 @@ export default function Track({ id }: { id: any }) {
           <Name href="" target="_blank" rel="noopener noreferrer">
             {track?.name}
           </Name>
+          <h4>
+            {track?.album?.name}, {track?.album?.release_date.substring(0, 4)}
+          </h4>
           <List>
             <div>
               {track?.artists &&

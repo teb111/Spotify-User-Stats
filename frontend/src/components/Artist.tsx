@@ -23,12 +23,12 @@ export default function Artist({
               {artist?.images.length > 0 && (
                 <IMG src={artist?.images[2]?.url} alt="Album Artwork" />
               )}
-              <a href={artist?.uri}>
+              <Link to={`artist/${artist?.id}`}>
                 <p>{artist?.name}</p>
                 <div>
                   <span>{artist?.genres[0]}</span>
                 </div>
-              </a>
+              </Link>
             </li>
           ))}
       </ul>

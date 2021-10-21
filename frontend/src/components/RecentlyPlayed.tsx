@@ -1,7 +1,8 @@
-import { Recent } from "./styles/RecentlyPlayed.styled";
+import { Recent, ArtistFlex } from "./styles/RecentlyPlayed.styled";
 import { formatSongDuration } from "../helpers/index";
 import { SignOut } from "./styles/Main.styled";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export default function RecentlyPlayed({
   recentlyPlayed,
@@ -11,10 +12,12 @@ export default function RecentlyPlayed({
   console.log(recentlyPlayed);
   return (
     <Recent>
-      <div>
-        <h3>Recently Played</h3>
-        <SignOut>Show More &nbsp;</SignOut>
-      </div>
+      <Link to="/recent">
+        <div>
+          <h3>Recently Played</h3>
+          <SignOut>Show More &nbsp;</SignOut>
+        </div>
+      </Link>
       <ul>
         {recentlyPlayed instanceof Array &&
           recentlyPlayed?.length > 0 &&
@@ -26,24 +29,28 @@ export default function RecentlyPlayed({
                   alt="Album Artwork"
                 />
               )}
-              <Link to={`track/${recent?.track?.id}`}>
-                <p>{recent?.track?.name.substring(0, 40)}...&nbsp;</p>
-                <div>
+              <div>
+                <Link to={`track/${recent?.track?.id}`}>
+                  <p>{recent?.track?.name.substring(0, 40)}...&nbsp;</p>
+                </Link>
+                <ArtistFlex>
                   {recent?.track?.artists &&
                     recent?.track?.artists.map(
-                      ({ name }: { name: string }, i: any) => (
-                        <span key={i}>
-                          {name.substring(0, 12)}
-                          {recent?.track?.artists.length > 0 &&
-                          i === recent?.track?.artists.length - 1
-                            ? ""
-                            : ","}
-                          &nbsp;
-                        </span>
+                      ({ name, id }: ArtistProps, i: any) => (
+                        <Link to={`artist/${id}`}>
+                          <span key={i}>
+                            {name.substring(0, 12)}
+                            {recent?.track?.artists.length > 0 &&
+                            i === recent?.track?.artists.length - 1
+                              ? ""
+                              : ","}
+                            &nbsp;
+                          </span>
+                        </Link>
                       )
                     )}
-                </div>
-              </Link>
+                </ArtistFlex>
+              </div>
               <span>
                 {recent?.track?.duration_ms &&
                   formatSongDuration(recent?.track?.duration_ms)}

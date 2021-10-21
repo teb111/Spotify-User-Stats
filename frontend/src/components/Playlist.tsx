@@ -6,14 +6,17 @@ import {
   UserInfo,
   UserDetails,
   List,
-  Name,
   UserImage,
   SignOut,
 } from "./styles/Main.styled";
 import { FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Recent } from "./styles/RecentlyPlayed.styled";
 import { TopTracksContainer } from "./styles/TopTracks.styled";
+import styled from "styled-components";
+
+const ArtistFlex = styled.div`
+  display: flex;
+`;
 
 export default function Playlist({ id }: { id: any }) {
   const [playlistContent, setPlaylistContent] = useState<PlayList | null>(null);
@@ -70,24 +73,28 @@ export default function Playlist({ id }: { id: any }) {
                         alt="Album Artwork"
                       />
                     )}
-                    <Link to={`/track/${playlist?.track?.id}`}>
-                      <p>{playlist?.track?.name.substring(0, 40)}...&nbsp;</p>
-                      <div>
+                    <div>
+                      <Link to={`/track/${playlist?.track?.id}`}>
+                        <p>{playlist?.track?.name.substring(0, 40)}...&nbsp;</p>
+                      </Link>
+                      <ArtistFlex>
                         {playlist?.track?.artists &&
                           playlist?.track?.artists.map(
-                            ({ name }: { name: string }, i: any) => (
-                              <span key={i}>
-                                {name.substring(0, 12)}
-                                {playlist?.track?.artists.length > 0 &&
-                                i === playlist?.track?.artists.length - 1
-                                  ? ""
-                                  : ","}
-                                &nbsp;
-                              </span>
+                            ({ name, id }: ArtistProps, i: any) => (
+                              <Link to={`/artist/${id}`}>
+                                <span key={i}>
+                                  {name}
+                                  {playlist?.track?.artists.length > 0 &&
+                                  i === playlist?.track?.artists.length - 1
+                                    ? ""
+                                    : ","}
+                                  &nbsp;
+                                </span>
+                              </Link>
                             )
                           )}
-                      </div>
-                    </Link>
+                      </ArtistFlex>
+                    </div>
                     <span>
                       {playlist?.track?.duration_ms &&
                         formatSongDuration(playlist?.track?.duration_ms)}

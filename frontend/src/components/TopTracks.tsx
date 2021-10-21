@@ -2,8 +2,14 @@ import { useState, useEffect } from "react";
 import { TopArtist } from "./styles/TopArtist.styled";
 import { TopTracksContainer } from "./styles/TopTracks.styled";
 import { getTopTracksLong, getTopTracks, getTopTracksShort } from "../spotify";
-import { catchErrors } from "../helpers";
+import { catchErrors, formatSongDuration } from "../helpers";
 import { Link } from "react-router-dom";
+import Loader from "./Loader";
+import styled from "styled-components";
+
+const ArtistFlex = styled.div`
+  display: flex;
+`;
 export default function TopTracks() {
   const [tracks, setTracks] = useState<RecentlyOrArtists>([]);
   const [duration, setDuration] = useState<String>("long");
@@ -66,35 +72,51 @@ export default function TopTracks() {
         </div>
       </TopArtist>
       <TopTracksContainer>
-        <ul>
-          {tracks instanceof Array &&
-            tracks.length > 0 &&
-            tracks?.map((track, i) => (
-              <li key={i}>
-                <img src={track?.album?.images[0]?.url} alt={track?.name} />
+        {tracks instanceof Array && tracks.length === 0 ? (
+          <Loader />
+        ) : (
+          <ul>
+            {tracks instanceof Array &&
+              tracks.length > 0 &&
+              tracks?.map((track, i) => (
+                <li key={i}>
+                  <img src={track?.album?.images[0]?.url} alt={track?.name} />
 
-                <Link to={`track/${track?.id}`}>
-                  <p>{track?.name}</p>
                   <div>
-                    {track?.artists &&
-                      track?.artists.map(
-                        ({ name }: { name: string }, i: any) => (
-                          <span key={i}>
-                            {name.substring(0, 12)}
-                            {track?.artists.length > 0 &&
-                            i === track?.artists.length - 1
-                              ? ""
-                              : ","}
-                            &nbsp;
-                          </span>
-                        )
-                      )}
+                    <Link to={`track/${track?.id}`}>
+                      <p>{track?.name}</p>
+                    </Link>
+                    <ArtistFlex>
+                      {track?.artists &&
+                        track?.artists.map(
+                          (
+                            { name, id }: { name: string; id: string },
+                            i: any
+                          ) => (
+                            <Link to={`/artist/${id}`}>
+                              <span key={i}>
+                                {name}
+                                {track?.artists.length > 0 &&
+                                i === track?.artists.length - 1
+                                  ? ""
+                                  : ","}
+                                &nbsp;
+                              </span>
+                            </Link>
+                          )
+                        )}
+                    </ArtistFlex>
                   </div>
-                </Link>
-                <span>3:52</span>
-              </li>
-            ))}
-        </ul>
+
+                  <span>
+                    {" "}
+                    {track?.duration_ms &&
+                      formatSongDuration(track?.duration_ms)}
+                  </span>
+                </li>
+              ))}
+          </ul>
+        )}
       </TopTracksContainer>
     </>
   );
