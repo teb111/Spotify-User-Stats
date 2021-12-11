@@ -11,4 +11,4 @@
 1. `npm install`
 1. `npm run dev`
 
-Live Link Demo: https://yourspotifystats.herokuapp.com/
+Live Link Demo: http://spotifystatss.herokuapp.com/
