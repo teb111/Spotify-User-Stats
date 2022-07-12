@@ -10,7 +10,7 @@ import {
   UserImage,
   SignOut,
 } from "./styles/Main.styled";
-import { FaPlay, FaSignOutAlt } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
 
 export default function Track({ id }: { id: any }) {
   const newId = id?.id;

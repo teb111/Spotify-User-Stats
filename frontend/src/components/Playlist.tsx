@@ -81,7 +81,7 @@ export default function Playlist({ id }: { id: any }) {
                         {playlist?.track?.artists &&
                           playlist?.track?.artists.map(
                             ({ name, id }: ArtistProps, i: any) => (
-                              <Link to={`/artist/${id}`}>
+                              <Link to={`/artist/${id}`} key={i}>
                                 <span key={i}>
                                   {name}
                                   {playlist?.track?.artists.length > 0 &&

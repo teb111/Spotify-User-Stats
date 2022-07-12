@@ -31,7 +31,7 @@ export default function TopPlaylists() {
               playlists.length > 0 &&
               playlists?.map((playlist, i) => (
                 <div key={i}>
-                  <Link to={`playlist/${playlist?.id}`}>
+                  <Link to={`playlist/${playlist?.id}`} key={i}>
                     <img src={playlist?.images[0]?.url} alt={playlist?.name} />
                   </Link>
                   <Link to={`playlist/${playlist?.id}`}>{playlist?.name}</Link>

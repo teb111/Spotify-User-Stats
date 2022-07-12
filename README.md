@@ -4,6 +4,10 @@
 
 ![Image](https://github.com/teb111/Spotify-User-Stats/blob/master/frontend/public/spotify.png)
 
+![Image](https://github.com/teb111/Spotify-User-Stats/blob/master/frontend/public/spotify2.png)
+
+![Image](https://github.com/teb111/Spotify-User-Stats/blob/master/frontend/public/spotify3.png)
+
 ## Setup
 
 1. [Register a Spotify App](https://developer.spotify.com/dashboard/applications) and add `http://localhost:5000/callback` as a Redirect URI in the app settings

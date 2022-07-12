@@ -2,14 +2,12 @@ import { Recent, ArtistFlex } from "./styles/RecentlyPlayed.styled";
 import { formatSongDuration } from "../helpers/index";
 import { SignOut } from "./styles/Main.styled";
 import { Link } from "react-router-dom";
-import styled from "styled-components";
 
 export default function RecentlyPlayed({
   recentlyPlayed,
 }: {
   recentlyPlayed: RecentlyOrArtists;
 }) {
-  console.log(recentlyPlayed);
   return (
     <Recent>
       <Link to="/recent">
@@ -29,15 +27,15 @@ export default function RecentlyPlayed({
                   alt="Album Artwork"
                 />
               )}
-              <div>
+              <div key={i}> 
                 <Link to={`track/${recent?.track?.id}`}>
                   <p>{recent?.track?.name.substring(0, 40)}...&nbsp;</p>
                 </Link>
-                <ArtistFlex>
+                <ArtistFlex key={i}>
                   {recent?.track?.artists &&
                     recent?.track?.artists.map(
                       ({ name, id }: ArtistProps, i: any) => (
-                        <Link to={`artist/${id}`}>
+                        <Link to={`artist/${id}`} key={i} > 
                           <span key={i}>
                             {name.substring(0, 12)}
                             {recent?.track?.artists.length > 0 &&

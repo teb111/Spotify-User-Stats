@@ -29,7 +29,6 @@ function App() {
 
   useEffect(() => {
     setAccessToken(token);
-    console.log(accessToken);
   }, [accessToken]);
 
   return (

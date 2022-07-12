@@ -39,7 +39,7 @@ export default function NewReleases() {
                   {release?.artists &&
                     release?.artists?.map(
                       ({ name, id }: { name: string; id: string }, i) => (
-                        <Link to={`artist/${id}`}>
+                        <Link to={`artist/${id}`} key={i}>
                           <span key={i}>{name}, &nbsp;</span>
                         </Link>
                       )

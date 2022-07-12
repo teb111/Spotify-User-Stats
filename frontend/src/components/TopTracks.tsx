@@ -12,7 +12,6 @@ const ArtistFlex = styled.div`
 `;
 export default function TopTracks() {
   const [tracks, setTracks] = useState<RecentlyOrArtists>([]);
-  const [duration, setDuration] = useState<String>("long");
 
   const artistDuration = {
     long: getTopTracksLong(),
@@ -93,7 +92,7 @@ export default function TopTracks() {
                             { name, id }: { name: string; id: string },
                             i: any
                           ) => (
-                            <Link to={`/artist/${id}`}>
+                            <Link to={`/artist/${id}`} key={i}>
                               <span key={i}>
                                 {name}
                                 {track?.artists.length > 0 &&

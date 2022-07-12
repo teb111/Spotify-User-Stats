@@ -11,7 +11,6 @@ import Loader from "./Loader";
 
 export default function TopArtists() {
   const [artists, setArtists] = useState<RecentlyOrArtists>([]);
-  const [duration, setDuration] = useState<String>("long");
 
   const artistDuration = {
     long: getTopArtistsLong(),

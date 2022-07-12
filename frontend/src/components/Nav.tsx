@@ -1,5 +1,5 @@
 import { NavStyled } from "./styles/Nav.styled";
-import { FaUser, FaMicrophone, FaMusic, FaPlay, FaTape } from "react-icons/fa";
+import { FaUser, FaMicrophone, FaMusic, FaPlay } from "react-icons/fa";
 import { MdMusicNote, MdNewReleases } from "react-icons/md";
 import { Link } from "react-router-dom";
 import logo from "../logo.png";

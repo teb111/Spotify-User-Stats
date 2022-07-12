@@ -57,7 +57,7 @@ export default function Recent() {
                     {r?.track?.artists &&
                       r?.track?.artists.map(
                         ({ name, id }: ArtistProps, i: any) => (
-                          <Link to={`artist/${id}`}>
+                          <Link to={`artist/${id}`} key={i}>
                             <span key={i}>
                               {name.substring(0, 12)}
                               {r?.track?.artists.length > 0 &&
