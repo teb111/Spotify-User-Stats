@@ -33,7 +33,7 @@ export default function LoginScreen() {
   const LOGIN_URI =
     process.env.NODE_ENV !== "production"
       ? "http://localhost:8888/login"
-      : "https://spotify-profile.herokuapp.com/login";
+      : "https://spotify-stats-m5k8.onrender.com/login";
 
   const loginHandler: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     const target = e.target as HTMLButtonElement;

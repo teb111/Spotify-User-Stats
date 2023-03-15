@@ -42,6 +42,8 @@ app.use(cors()).use(cookieParser())
 app.get('/', function (req, res) {
   res.render(path.resolve(__dirname, '../frontend/build/index.html'))
 })
+
+console.log(path.resolve(__dirname, '../frontend/build'))
 //routes
 app.get('/login', cors(), function (req, res) {
   console.log('Code got here')
