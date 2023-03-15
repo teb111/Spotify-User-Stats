@@ -30,10 +30,15 @@ const BottomStyled = styled.div`
 `;
 
 export default function LoginScreen() {
+  // const LOGIN_URI =
+  //   process.env.NODE_ENV !== "production"
+  //     ? "http://localhost:8888/login"
+  //     : "https://spotify-stats-m5k8.onrender.com/login";
+
   const LOGIN_URI =
-    process.env.NODE_ENV !== "production"
-      ? "http://localhost:8888/login"
-      : "https://spotify-stats-m5k8.onrender.com/login";
+  process.env.NODE_ENV !== "production"
+    ? "https://spotify-stats-m5k8.onrender.com/login"
+    : "https://spotify-stats-m5k8.onrender.com/login";
 
   const loginHandler: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     const target = e.target as HTMLButtonElement;
@@ -41,7 +46,8 @@ export default function LoginScreen() {
     e.preventDefault();
     console.log(target.value);
 
-    window.location.href = LOGIN_URI;
+    // window.location.href = LOGIN_URI;
+    window.location.href = "https://spotify-stats-m5k8.onrender.com/login"
   };
   return (
     <>

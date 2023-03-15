@@ -12,6 +12,8 @@ var morgan = require('morgan')
 dotenv.config({})
 var redirect_uri = process.env.REDIRECT_URI || 'http://localhost:8888/callback'
 var frontend_uri = process.env.FRONTEND_URI || 'http://localhost:3000'
+
+console.log(NODE_ENV)
 if (process.env.NODE_ENV !== 'production') {
   process.env.REDIRECT_URI = 'http://localhost:8888/callback'
   process.env.FRONTEND_URI = 'http://localhost:3000'
