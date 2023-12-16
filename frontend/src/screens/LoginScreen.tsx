@@ -1,9 +1,9 @@
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { LoginStyled } from "../components/styles/Login.styled";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
+import { Link } from "react-router-dom"
+import styled from "styled-components"
+import { LoginStyled } from "../components/styles/Login.styled"
 
-import logoSpotify from "../spotify-logo.png";
+import logoSpotify from "../spotify-logo.png"
 
 const BottomStyled = styled.div`
   margin-top: 150px;
@@ -27,28 +27,28 @@ const BottomStyled = styled.div`
       theme?.colors?.color ? theme?.colors?.color : "#ffffffeb"};
     margin-left: 10px;
   }
-`;
+`
 
 export default function LoginScreen() {
   // const LOGIN_URI =
   //   process.env.NODE_ENV !== "production"
   //     ? "http://localhost:8888/login"
-  //     : "https://spotify-stats-m5k8.onrender.com/login";
+  //     : "https://spotify-statss.onrender.com/login";
 
   const LOGIN_URI =
-  process.env.NODE_ENV !== "production"
-    ? "https://spotify-stats-m5k8.onrender.com/login"
-    : "https://spotify-stats-m5k8.onrender.com/login";
+    process.env.NODE_ENV !== "production"
+      ? "https://spotify-statss.onrender.com/login"
+      : "https://spotify-statss.onrender.com/login"
 
   const loginHandler: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-    const target = e.target as HTMLButtonElement;
-    console.log("log in");
-    e.preventDefault();
-    console.log(target.value);
+    const target = e.target as HTMLButtonElement
+    console.log("log in")
+    e.preventDefault()
+    console.log(target.value)
 
     // window.location.href = LOGIN_URI;
-    window.location.href = "https://spotify-stats-m5k8.onrender.com/login"
-  };
+    window.location.href = "https://spotify-statss.onrender.com/login"
+  }
   return (
     <>
       <LoginStyled>
@@ -102,5 +102,5 @@ export default function LoginScreen() {
         </p>
       </BottomStyled>
     </>
-  );
+  )
 }
