@@ -16,3 +16,5 @@
 1. `npm run dev`
 
 Live Link Demo: https://spotify-statss.onrender.com/
+
+NB: Because spotify has refused to increase the quota for this web application, please reach out to me on fakoredetobiloba.ft@gmail.com with your spotify email address so i can add you to the test group. Thank you
